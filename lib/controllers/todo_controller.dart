@@ -7,13 +7,15 @@ class TodoController extends GetxController {
   final TextEditingController addTodoTextEditingController =
       TextEditingController();
 
+  var isTextFieldNotEmpty = false.obs;
+
   List<TodoModel> todos = todoList.obs;
-  var todoId = 0;
+  var _todoId = 0;
 
   void addTodo({required String title}) {
     // todos.insert(0, TodoModel(id: todoId.value, title: title));
-    todos.add(TodoModel(id: todoId, title: title));
-    todoId++;
+    todos.add(TodoModel(id: _todoId, title: title));
+    _todoId++;
   }
 
   void editTodoTitle({required int id, required String newTitle}) {
