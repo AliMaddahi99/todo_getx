@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_getx/widgets/add_todo_text_field.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,7 +12,12 @@ class Home extends StatelessWidget {
           "Todo Getx",
         ),
       ),
-      body: Container(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          AddTodoTextField(),
+        ],
+      ),
     );
   }
 }
