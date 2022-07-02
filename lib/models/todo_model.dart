@@ -1,7 +1,7 @@
 class TodoModel {
-  final int id;
-  final String title;
-  final bool isDone;
+  int id;
+  String title;
+  bool isDone;
 
   TodoModel({
     required this.id,
