@@ -7,7 +7,7 @@ class TodoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       title: "TodoAppGetx",
       home: Home(),
     );
