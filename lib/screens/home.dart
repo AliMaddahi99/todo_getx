@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:todo_getx/controllers/todo_controller.dart';
 import 'package:todo_getx/widgets/add_todo_text_field.dart';
+import 'package:todo_getx/widgets/todo_item_card.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
+
+  final TodoController _controller = Get.put(TodoController());
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +18,18 @@ class Home extends StatelessWidget {
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          Obx(
+            () => Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) => TodoItemCard(
+                  index: index,
+                  todo: _controller.todos[index],
+                ),
+                itemCount: _controller.todos.length,
+              ),
+            ),
+          ),
           AddTodoTextField(),
         ],
       ),
