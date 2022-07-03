@@ -19,7 +19,7 @@ class DismissibleCardListView extends StatelessWidget {
               direction: DismissDirection.endToStart,
               background: Container(
                 alignment: Alignment.centerRight,
-                padding: const EdgeInsets.only(right: 20.0),
+                padding: const EdgeInsets.only(right: 10.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4.0),
                   color: Colors.red,
