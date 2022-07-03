@@ -33,15 +33,22 @@ class AddTodoTextField extends StatelessWidget {
                     hintText: "What todo?",
                   ),
                   controller: _controller.addTodoTextEditingController,
+                  focusNode: _controller.addTodoTextFieldFocusNode,
                   onChanged: (text) {
                     _controller.isTextFieldNotEmpty.value = text.isNotEmpty;
                   },
+                  onSubmitted: _controller.isTextFieldNotEmpty.value
+                      ? (text) => _controller.addTodo(title: text)
+                      : null,
                 ),
               ),
             ),
             IconButton(
               splashRadius: 1,
-              onPressed: _controller.isTextFieldNotEmpty.value ? () {} : null,
+              onPressed: _controller.isTextFieldNotEmpty.value
+                  ? () => _controller.addTodo(
+                      title: _controller.addTodoTextEditingController.text)
+                  : null,
               icon: const Icon(Icons.add),
             ),
           ],
