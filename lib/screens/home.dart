@@ -24,7 +24,6 @@ class Home extends StatelessWidget {
               child: ListView.builder(
                 itemBuilder: (context, index) => TodoItemCard(
                   index: index,
-                  todo: _controller.todos[index],
                 ),
                 itemCount: _controller.todos.length,
               ),
