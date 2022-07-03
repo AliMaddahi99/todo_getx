@@ -14,35 +14,32 @@ class TodoItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: Card(
-        elevation: 4.0,
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
-          child: Row(
-            children: [
-              Obx(
-                () => Checkbox(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  activeColor: Colors.green,
-                  value: _controller.todos[index].isDone,
-                  onChanged: (done) {
-                    var changed = _controller.todos[index];
-                    changed.isDone = done!;
-                    _controller.todos[index] = changed;
-                  },
+    return Card(
+      elevation: 4.0,
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
+        child: Row(
+          children: [
+            Obx(
+              () => Checkbox(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
+                activeColor: Colors.green,
+                value: _controller.todos[index].isDone,
+                onChanged: (done) {
+                  var changed = _controller.todos[index];
+                  changed.isDone = done!;
+                  _controller.todos[index] = changed;
+                },
               ),
-              Expanded(
-                child: Text(
-                  _controller.todos[index].title,
-                ),
+            ),
+            Expanded(
+              child: Text(
+                _controller.todos[index].title,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
