@@ -7,6 +7,7 @@ class TodoController extends GetxController {
   final TextEditingController addTodoTextEditingController =
       TextEditingController();
   final FocusNode addTodoTextFieldFocusNode = FocusNode();
+
   var isTextFieldNotEmpty = false.obs;
   var todos = todoList.obs;
   var _todoId = 0;
@@ -21,10 +22,6 @@ class TodoController extends GetxController {
     _todoId++;
 
     addTodoTextFieldFocusNode.requestFocus();
-  }
-
-  void editTodoTitle({required int id, required String newTitle}) {
-    todos[id].title = newTitle;
   }
 
   void deleteTodo({required int id}) {
