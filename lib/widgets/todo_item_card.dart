@@ -48,6 +48,13 @@ class TodoItemCard extends StatelessWidget {
                 Expanded(
                   child: Text(
                     _controller.todos[index].title,
+                    style: _controller.todos[index].isDone
+                        ? const TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                          )
+                        : const TextStyle(
+                            decoration: TextDecoration.none,
+                          ),
                   ),
                 ),
               ],
