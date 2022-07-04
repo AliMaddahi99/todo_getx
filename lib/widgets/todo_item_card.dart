@@ -16,6 +16,7 @@ class TodoItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4.0,
+      margin: const EdgeInsets.all(0),
       child: Container(
         padding: const EdgeInsets.fromLTRB(5.0, 10.0, 10.0, 10.0),
         child: Row(
