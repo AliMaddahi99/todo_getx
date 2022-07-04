@@ -8,4 +8,9 @@ class TodoModel {
     required this.title,
     this.isDone = false,
   });
+
+  factory TodoModel.fromJson(Map<String, dynamic> json) =>
+      TodoModel(id: json["id"], title: json["title"], isDone: json["isDone"]);
+
+  Map<String, dynamic> toJson() => {"id": id, "title": title, "isDone": isDone};
 }
