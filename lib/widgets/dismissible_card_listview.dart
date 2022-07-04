@@ -13,7 +13,7 @@ class DismissibleCardListView extends StatelessWidget {
     return Obx(
       () => Expanded(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
           child: ListView.builder(
             itemBuilder: (context, index) {
               return Column(
