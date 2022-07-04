@@ -11,6 +11,10 @@ class EditTodo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var id = _editTodoController.args[0];
+    var edited = _controller.todos[id];
+    var title = _editTodoController.args[1];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Edit"),
@@ -36,10 +40,13 @@ class EditTodo extends StatelessWidget {
           controller: _editTodoController.editTodoTextEditingController,
           focusNode: _editTodoController.editTodoTextFieldFocusNode,
           onChanged: (text) {
-            var id = _editTodoController.args[0];
-            var edited = _controller.todos[id];
-            edited.title = text;
-            _controller.todos[id] = edited;
+            if (text.isEmpty) {
+              edited.title = title;
+              _controller.todos[id] = edited;
+            } else {
+              edited.title = text;
+              _controller.todos[id] = edited;
+            }
           },
         ),
       ),
